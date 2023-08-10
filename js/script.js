@@ -39,10 +39,12 @@ function mostrarItem() { //ForEach manipular obj dentro do array
         `
     })
 
-    const inputsCheck = document.querySelectorAll('input[type="checkbox"]'); //Seleciona input respectivo
+    const inputsCheck = document.querySelectorAll('input[type="checkbox"]');
+    //Seleciona input respectivo
     inputsCheck.forEach(i => {
         i.addEventListener('click', (evento) => {
-            console.log(evento.target.parentElement.parentElement);
+            const valorDoElemento = (evento.target.parentElement
+                .parentElement.getAttribute('data-value'));
         })
     })
 }

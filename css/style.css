@@ -8,8 +8,7 @@ body {
     font-family: 'Montserrat', 'sans-serif', 'Mansalva', cursive;
 }
 
-h2,
-footer {
+h2, footer {
     font-family: 'Mansalva';
 }
 
@@ -18,7 +17,7 @@ button {
 }
 
 .itens-comprados {
-    text-decoration: line-through;
+text-decoration: line-through;
 }
 
 .borda-lista {

@@ -2,10 +2,13 @@ let listaDeItens = []
 const form = document.getElementById("form-itens");
 const itensInput = document.getElementById("receber-item");
 const ulItens = document.getElementById("lista-de-itens");
+const ultItensComprados = document.getElementById("itens-comprados");
+
 form.addEventListener("submit", function (evento) {
     evento.preventDefault();
     salvarItem();
     mostrarItem();
+    itensInput.focus();
 });
 
 function salvarItem() {
@@ -22,12 +25,26 @@ function salvarItem() {
             checar: false
         })
     }
-    console.log(listaDeItens)
+    itensInput.value = ''
 }
 function mostrarItem() { //ForEach manipular obj dentro do array
     ulItens.innerHTML = ''
+    ultItensComprados.innerHTML = ''
     listaDeItens.forEach((elemento, index) => {
-        ulItens.innerHTML += `
+        if (elemento.checar) {
+            ultItensComprados.innerHTML +=
+                `<li class="item-compra is-flex is-justify-content-space-between" data-value="${index}">
+            <div>
+                <input type="checkbox" checked class="is-clickable" />
+                <input type="text" class="is-size-5" value="${elemento.valor}"> </input>
+            </div>
+            <div>
+                <i class="fa-solid fa-trash is-clickable deletar"></i>
+            </div>
+        </li>
+            `
+        } else {
+            ulItens.innerHTML += `
         <li class="item-compra is-flex is-justify-content-space-beetween" data-value="${index}">
             <div>
                 <input type="checkbox" class="is-clickable"/>
@@ -38,6 +55,7 @@ function mostrarItem() { //ForEach manipular obj dentro do array
             </div>
         </li>            
         `
+        }
     })
 
     const inputsCheck = document.querySelectorAll('input[type="checkbox"]');
@@ -47,7 +65,7 @@ function mostrarItem() { //ForEach manipular obj dentro do array
             const valorDoElemento = (evento.target.parentElement
                 .parentElement.getAttribute('data-value'));
             listaDeItens[valorDoElemento].checar = evento.target.checked
-            console.log(listaDeItens[valorDoElemento].checar);
+            mostrarItem();
         })
     })
 }

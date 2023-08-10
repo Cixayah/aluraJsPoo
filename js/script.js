@@ -18,7 +18,8 @@ function salvarItem() {
     } else {
         //checar repetidos com arrow function (função anônima)
         listaDeItens.push({
-            valor: comprasItem
+            valor: comprasItem,
+            checar: false
         })
     }
     console.log(listaDeItens)
@@ -45,6 +46,8 @@ function mostrarItem() { //ForEach manipular obj dentro do array
         i.addEventListener('click', (evento) => {
             const valorDoElemento = (evento.target.parentElement
                 .parentElement.getAttribute('data-value'));
+            listaDeItens[valorDoElemento].checar = evento.target.checked
+            console.log(listaDeItens[valorDoElemento].checar);
         })
     })
 }

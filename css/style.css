@@ -1,5 +1,5 @@
 html {
-    background: linear-gradient(177.52deg, #4574E3 2.11%, #154580 81.34%);
+    background: linear-gradient(to bottom, #5A4A9C, #87CEEB);
     background-repeat: no-repeat;
     height: 100%;
 }
@@ -9,7 +9,7 @@ body {
 }
 
 h2, footer {
-    font-family: 'Mansalva';
+    font-size: 10px;
 }
 
 button {
@@ -21,7 +21,7 @@ text-decoration: line-through;
 }
 
 .borda-lista {
-    border-bottom: dotted 2px blue;
+    border-bottom:dashed 2px #9900ff;
 }
 
 input:disabled {

@@ -1,8 +1,8 @@
 cliente = {
-    nome: 'Mariana',
-    idade: 35,
-    genero: 'Feminino',
+    nome: 'Cix',
+    idade: 26,
+    genero: 'Masculino',
 }
-cliente.estado = 'Pernambuco'
+cliente.estado = 'São Paulo'
 
-console.log('Olá, meu nome é ' + cliente.nome + ' e moro no estado de ' + cliente.estado + '.')
+console.log('Olá, eu sou ' + cliente.nome + ' e moro no estado de ' + cliente.estado + '.')
